@@ -50,7 +50,19 @@ int main() {
         cout << "Выберите продукт от 1 до 5 или 0, чтобы выйти" << endl;
         break;
     }
-  /*  delete backet[0];
+  /* !!!!!!!!! Если делать как в примере на сайте то вылетает ошибка, по этой причине закоментил делит
+  
+  * 
+  * _CRT_SECURITYCRITICAL_ATTRIBUTE
+void __CRTDECL operator delete(void* const block) noexcept
+{
+    #ifdef _DEBUG
+    _free_dbg(block, _UNKNOWN_BLOCK);
+    #else
+    free(block);
+    #endif
+}
+    delete backet[0];
     delete backet[1];
     delete backet[2];
     delete backet[3];
